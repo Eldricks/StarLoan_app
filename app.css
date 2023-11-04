@@ -221,7 +221,7 @@ a.apple{
 	color: #87cdee;
 	padding: 2%;
 	width:100px;
-	display:inline;
+	float:left;
 	
 }
 
