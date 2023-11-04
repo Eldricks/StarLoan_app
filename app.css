@@ -57,7 +57,7 @@ width: 75%;
 height: 27px;
 background-image: linear-gradient(to right ,#000007 ,#000007 ,#000007 , #fff,#fff);
 border-radius: 35.6px;
-margin: 5% 5% 5% 0;
+margin: 20% 5% 5% 0;
 
 }
 
@@ -142,7 +142,10 @@ font-size: 0.8rem;
 line-height: 1;
 font-weight: 300;
 } 
-
+.nav.justify-content.fixed-top{
+	background-color:#87cdee; 
+	padding: 2% 0  0;
+}
 .nav.justify-content-center{
 	padding: 4% 0  0;
 }
