@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>signup-app</title>
+<link rel="stylesheet" href="app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <script type="module">
+
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js';
+       import {  createUserWithEmailAndPassword, getAuth, sendSignInLinkToEmail } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js'
+   
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyDrPwMf6z-xWrJwapawXnBYw60VjiOqjjk",
+              authDomain: "tett-8b39b.firebaseapp.com",
+              projectId: "tett-8b39b",
+              storageBucket: "tett-8b39b.appspot.com",
+              messagingSenderId: "366708585219",
+              appId: "1:366708585219:web:bc99d8c4447b67a02fef36"
+            };
+            
+            // Initialize Firebase
+         const App = initializeApp(firebaseConfig);	
+
+
+      var pemail = document.getElementById("numberd")
+      var pword = document.getElementById("pword")
+      var better = document.getElementById("better") 
+      var actionCodeSettings = {
+  // URL you want to redirect back to. The domain (www.example.com) for this
+  // URL must be in the authorized domains list in the Firebase Console.
+  url: 'https://www.example.com/finishSignUp?cartId=1234',
+  // This must be true.
+  handleCodeInApp: true,
+  iOS: {
+    bundleId: 'com.example.ios'
+  },
+  android: {
+    packageName: 'com.example.android',
+    installApp: true,
+    minimumVersion: '12'
+  },
+  dynamicLinkDomain: 'example.page.link'
+};
+      function authenticate(){
+         const email = pemail.value
+         const password = pword.value
+        const move = getAuth(email, actionCodeSettings);
+        sendSignInLinkToEmail(move)
+  .then(() => {
+    // The link was successfully sent. Inform the user.
+    // Save the email locally so you don't need to ask the user for it again
+    // if they open the link on the same device.
+   //  window.localStorage.setItem('emailForSignIn', email);
+    // ...
+    console.log(success);
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+      }
+      
+      better.addEventListener('click',authenticate );
+   
+      
+      
+      
+      </script>	
+
+
+
+
+
+
+   </head>
+<body style="background-color: #87cdee";>
+
+<section id="signUp">
+<div class="sup">
+  <a href="star.html"><button class="back"><img class="all" src="icons8-back-50.png"></button></a>
+
+   <span>
+       <span class="country">
+          <span> Country | <img class="all" src=""></span>
+       </span>
+  </span></div>
+ <div class="icon-login">
+       <img class="rounds" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg">
+    </div>
+
+
+	<form action="email.html" class="form">
+
+ <div class="mb-3">
+    <label for="number" class="form-label ">Email-SignUp</label>
+      <p class="lefte"> Email</p>
+    <input type="email" class="form-control" id="numberd" placeholder="Demo@gmail.com" required  >
+  </div>
+
+
+   <p class="lefte"> Enter your BVN</p>
+    <input type="number" class="form-control " id="number" placeholder=" BVN  " required  >
+
+     <p class="lefte">  Create Account password</p>
+    <input type="password" class="form-control" id="pword" placeholder="  Account password" required  >
+
+  <p class="lefte">  Confirm Account password</p>
+   <input type="password" class="form-control " id="number" placeholder=" Account password" required  >
+  </div>
+
+
+   <div class="lefte"><input type="checkbox" name="confirm"> Agree with STAR LOAN <a class="no" href="info.html">Terms of Service</a> and <a class="no" href="privacy.html">Privacy Policy</a> </div>
+
+
+
+   <a id="better" href="email.html" ><button class="but on" name="button">Verify  </button> </a>
+
+
+<div class="pod">Already have an account <a class="linkin" href="login.html"><span>Login</span></a></div>
+ </div>
+    </form>
+
+	</body>
+   <script type="text/javascript" src="form.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</html>

