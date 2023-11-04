@@ -8,9 +8,7 @@ body{overflow-x: hidden;
     font-feature-settings: "liga" on;
     -moz-font-feature-settings: "liga" on;
     overflow-x: hidden;
-    font-size: 0.8rem;
-	width: 100%;
-  
+    font-size: 0.8rem;  
 }
 
 
