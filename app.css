@@ -146,9 +146,11 @@ font-weight: 300;
 .nav.justify-content.fixed-top{
 	background-color:#87cdee; 
 	padding:  0;
+	height:60px;
 }
 .nav.justify-content-center{
 	padding: 4% 0  0;
+		height:60px;
 }
 
 .price{
