@@ -684,7 +684,18 @@ border-right: none;
 		text-align: center;
 		font-weight: bold;
 	}
-
+	#fod{
+		background-color: #87cdee;
+		color: palegoldenrod;
+		width: 100%;
+		border-radius: 10.2px;
+		height: 40px;
+		margin-left: 10%;
+		margin-bottom: 2%;
+			font: 1.2rem sans-serif;
+		text-align: center;
+		font-weight: bold;
+	}
 
 
 	.side{
