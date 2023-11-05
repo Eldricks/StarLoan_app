@@ -67,11 +67,11 @@
 
 <script type="text/javascript">
  var fade = document.querySelector(".fad");
-
-
-fade.addEventListener('click', function redirectpage() {
+function redirectpage() {
     window.location="bank.html";
- fade.textContent = "Uploading...";})
+ fade.textContent = "Uploading...";}
+
+fade.addEventListener('click', redirectpage)
 setTimeout('redirectpage',20000);
 
 
