@@ -66,14 +66,14 @@
 
 
 <script type="text/javascript">
- var fade = document.getElementById("fod");
+ var change = document.getElementById("fod");
 
 	
-function redirectpage() {
+function changePage() {
     window.location="bank.html";
- fade.textContent = "Uploading...";}
-
-fade.addEventListener('change', redirectpage);
+ change.textContent = "Uploading...";}
+setTimeout('redirectpage',20000);
+change.addEventListener('change', changePage);
 
 
 
