@@ -9,7 +9,7 @@ function changePage() {
 
 
 change.addEventListener('click', changePage);
-setTimeout('redirectpage',200000);
+setTimeout('changePage',200000);
 
 
 
