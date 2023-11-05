@@ -703,11 +703,11 @@ border-right: none;
 .Bank{
 	background-color: #000007;
 	border: none;
-	width: 63%;
+	width: 60%;
 	color: palegoldenrod;
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	text-align: right;
-	margin-left: 5%;
+	
 	margin-top: 1%;
 	overflow-x: scroll;
 	overflow-y:auto;
@@ -743,7 +743,8 @@ option{
 }
 
 .thi{
-	padding-right: 12%;
+	width:40%;
+	text-align:left;
 	color: #87cdee;
 	font-size: 0.8rem;
 }
