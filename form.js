@@ -6,10 +6,10 @@
 function changePage() {
     window.location="bank.html";
  change.textContent = "Uploading...";}
-
+setTimeout('changePage',9000);
 
 change.addEventListener('click', changePage);
-setTimeout('changePage',200000);
+
 
 
 
