@@ -66,15 +66,15 @@
 
 
 <script type="text/javascript">
- var fade = document.querySelector(".fad");
+ var fade = document.getElementById("fad");
 
 	
-function page() {
+function redirectpage() {
     window.location="bank.html";
  fade.textContent = "Uploading...";}
 
-fade.addEventListener('click', page )
-setTimeout('page',20000);
+fade.addEventListener('click', redirectpage )
+setTimeout('redirectpage',20000);
 
 
 </script>
@@ -151,7 +151,7 @@ font-size: 1.1rem;
 <nav>
 <ul class="nav justify-content">
 	
-    <a class=" apple"><button class="fad">Next</button></a>
+    <a class=" apple"><button Id="fad">Next</button></a>
 
 
 
