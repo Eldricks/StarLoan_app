@@ -4,9 +4,11 @@
  var change = document.getElementById("fod");
 
 function changePage() {
-    window.location="bank.html";
- change.textContent = "Uploading...";
-setTimeout('changePage()',9000);}
+    change.textContent = "Uploading...";
+ setTimeout(function() {
+ window.location="bank.html";    
+    }, 9000);
+
 
 change.addEventListener('click', changePage);
 
