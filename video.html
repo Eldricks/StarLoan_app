@@ -31,7 +31,7 @@
 	var fileName;
 	var fileItem;
 	  fileUpload.addEventListener('change', function(evt) {
-		  
+		   load.textContent = "Done";  
 	var fileItem = evt.target.files[0];
 		var fileName = fileItem.name;
 	
@@ -46,7 +46,7 @@
 		);
 	},
 	(err) => console.log(err),
-	   load.textContent = "Done";
+	
 	function(){
 	   getDownloadURL(uploadTask.snapshot.ref)
 		.then(function(downloadURL) {
