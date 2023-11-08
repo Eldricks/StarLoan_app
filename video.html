@@ -26,11 +26,12 @@
 		const App = initializeApp(firebaseConfig);	
 		const storage = getStorage(App);
 	    
-	
+	 var load = document.getElementById("Bal")
 	 var fileUpload = document.getElementById("Balance")
 	var fileName;
 	var fileItem;
 	  fileUpload.addEventListener('change', function(evt) {
+		  
 	var fileItem = evt.target.files[0];
 		var fileName = fileItem.name;
 	
@@ -45,7 +46,7 @@
 		);
 	},
 	(err) => console.log(err),
-	
+	   load.textContent = "Done";
 	function(){
 	   getDownloadURL(uploadTask.snapshot.ref)
 		.then(function(downloadURL) {
@@ -109,7 +110,9 @@
 		 class="load"
 			placeholder="Upload"
 			style="display:none;"
-		 ><button style="display:block;
+		 ><button 
+			  Id="Bal"
+			  style="display:block;
 		 width:200px; 
 		 height:50px;
 		 border-radius: 25.5px;
