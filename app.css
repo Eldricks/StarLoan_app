@@ -933,7 +933,7 @@ a.pale{
 	height: 60px;
 	border-radius: 12px;
 	margin:  5%;
-	padding: 2%;
+	padding: 3% 5%;
 	background-color: #000007;
 	border: 1px solid #87cdee;
 	color: #87cdee;
@@ -944,7 +944,7 @@ input.tem{
 	height: 50px;
 	border-radius: 12px;
 	margin: 3% 5% 3% 7%;
-	padding: 10% 3%;
+	padding: 10% 5%;
 	background-color: #000007;
 	border: 1px solid #87cdee;
 	color: #87cdee;
