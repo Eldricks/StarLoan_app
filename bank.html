@@ -10,21 +10,22 @@
 
 <script type="module">
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js';
-import {getDatabase, set, child, remove, onValue, update, get,ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.6.2/firebase-app.js';
+import {getDatabase, set, child, remove, onValue, update, get,ref } from "https://www.gstatic.com/firebasejs/10.6.2/firebase-database.js";
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBotjNZk1HfaBzFM0rurexUAYpFuUxbkZM",
+    authDomain: "star-6c367.firebaseapp.com",
+    databaseURL: "https://star-6c367-default-rtdb.firebaseio.com",
+    projectId: "star-6c367",
+    storageBucket: "star-6c367.appspot.com",
+    messagingSenderId: "174087994273",
+    appId: "1:174087994273:web:9f42f32700081fe7e0e9e0"
+  };
 
-		const firebaseConfig = {
-		  apiKey: "AIzaSyDrPwMf6z-xWrJwapawXnBYw60VjiOqjjk",
-		  authDomain: "tett-8b39b.firebaseapp.com",
-		  projectId: "tett-8b39b",
-		  storageBucket: "tett-8b39b.appspot.com",
-		  messagingSenderId: "366708585219",
-		  appId: "1:366708585219:web:bc99d8c4447b67a02fef36"
-		};
-		
-		// Initialize Firebase
-	const App = initializeApp(firebaseConfig);	
-    const db = getDatabase(App);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+const db = getDatabase(App);
 	
 
 
