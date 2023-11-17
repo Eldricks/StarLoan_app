@@ -17,7 +17,15 @@ section{
 		padding:5% 0 0;
 		height: 100%;
 }
-
+.coloro{
+	
+	text-align: left;
+	color: #000007;
+	font-size: 1rem;
+	font-family:sans-serif;
+font-weight: bold;
+padding: 3%;
+}
 .all{
 	width: 20px;
 	font-weight: 900;
