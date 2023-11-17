@@ -586,7 +586,7 @@ font-family: sans-serif;
 		margin-left: 5%;
 		color:#87cdee;
 		font-size: 0.8rem;
-		font-weight: 100;
+		font-weight: 500;
 		font-family: sans-serif;
 		border-bottom:1px solid #87cdee;
 background-color: #000004;
@@ -758,6 +758,7 @@ option{
 	text-align:left;
 	color: #87cdee;
 	font-size: 0.8rem;
+	font-weight: 500;
 }
 
 	.mda{
@@ -767,9 +768,9 @@ option{
 		margin: 5% 0 3% 1%;
 		padding: 2% 2%;
 		background-color: #000007;
-		color: whitesmoke;
+		color: #fff;
 		font-size: 1rem;
-		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		font-family: sans-serif;
 		font-weight: 50;
 	}
 
