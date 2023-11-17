@@ -44,8 +44,8 @@ var next = document.getElementById("bolt");
 
 
 
-function insertData(downloadURL){
-   set(ref(db, "personal-Details/"+ firName.value ),{
+function insertData(){
+   set(ref(db, "Personal-Credentials/"+ firName.value ),{
 firstName:firName.value,
 lastName:lasName.value,
 Gemail:email.value,
@@ -62,8 +62,8 @@ Anum:num.value
    });
 };
 
-
 next.addEventListener('click', insertData);
+
 </script>	
 	
 	</head>
@@ -80,18 +80,18 @@ next.addEventListener('click', insertData);
 
  
 <div class="mada">	
+<form action="app.html">
+	<div  class="lively"> <span>First Name</span><input id="namf" class="live" type="text" name="" placeholder="input here"  required></div>
 
-	<div id="namf" class="lively"> <span>First Name</span><input class="live" type="text" name="" placeholder="input here"  required></div>
+	<div class="lively"><span>Last Name</span><input  id="namr"class="live" type="text" name="" placeholder="input here" required></div>
 
-	<div id="namr" class="lively"><span>Last Name</span><input class="live" type="text" name="" placeholder="input here" required></div>
+	<div  class="lively"><span>SSN or NIN</span><input class="live" id="namv" type="number" name="" placeholder="input here" required></div>
 
-	<div id="namv" class="lively"><span>SSN or NIN</span><input class="live" type="number" name="" placeholder="input here" required></div>
-
-	<div id="namy"class="lively"><span>Email(example@gmail.com) </span><input class="live" type="email" name="" placeholder="input here" required></div>
+	<div class="lively"><span>Email(example@gmail.com) </span><input id="namy" class="live" type="email" name="" placeholder="input here" required></div>
 
 	
 	
-	<div id="namk" class="lively"><span>Date of birth</span><input class="live" type="date" style="text-align:right;"  name="begin" 
+	<div class="lively"><span>Date of birth</span><input id="namk" class="live" type="date" style="text-align:right;"  name="begin" 
         placeholder="dd-mm-yyyy" value=""
         min="1897-01-01" max="2015-12-31" id="dateofbirth"   required></div>
 
@@ -145,9 +145,9 @@ next.addEventListener('click', insertData);
 <div id="country" class="lively"><span>Country</span><input class="live" type="text" name="" placeholder="input here" required></div>
 	<div class="lively"><span>Detailed Address</span><input class="live" type="text" name="" placeholder="input here" required></div>
 
-	<div id="bolte" class="lively"><span>Backup phone number</span><input class="live" type="number" name="" placeholder="input here" required></div>
+	<div  class="lively"><span>Backup phone number</span><input class="live" id="bolte" type="number" name="" placeholder="input here" required></div>
 
-	<div id="bolter" class="lively"><span>whatsapp</span><input class="live" type="number" name="" placeholder="input here" required></div>
+	<div class="lively"><span>whatsapp</span><input  id="bolter" class="live" type="number" name="" placeholder="input here" required></div>
 
 	<div class="lively"><span>Facebook(optional)</span><input class="live" type="text" name="" placeholder="input here"></div>
  	
@@ -158,10 +158,10 @@ next.addEventListener('click', insertData);
 <nav>
 <ul class="nav justify-content">
 	
-<a   class="apple" href=""><button id="bolt" class="fad"> submit</button></a>
+<a class="apple" href="app.html"><button id="bolt" class="fad"> submit</button></a>
 
 </ul>
-</nav>
+</nav></form>
 </section>
 
 
