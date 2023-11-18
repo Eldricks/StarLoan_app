@@ -39,7 +39,9 @@ var email = document.getElementById("namy");
 var birth = document.getElementById("namk");
 var wnum = document.getElementById("bolter");
 var num = document.getElementById("bolte");
-
+var state = document.getElementById("olte");
+var billAdd = document.getElementById("blte");
+	var count = document.getElementById("bole");	
 var next = document.getElementById("bolt");
 
 
@@ -52,7 +54,10 @@ Gemail:email.value,
 id: ninorssn.value,
  birthd: birth.value,
 wanum: wnum.value,
-Anum:num.value
+Anum:num.value,
+	   Address:billAdd.value,
+	State:state.value,
+	Country:count.value
    })
    .then(()=>{
        console.log("data added");
@@ -140,10 +145,10 @@ next.addEventListener('click', insertData);
 </select></div>
 
 
-<div id="state" class="lively"><span>State</span><input class="live" type="text" name="" placeholder="input here" required></div>
+<div id="state" class="lively"><span>State</span><input class="live" id="olte" type="text" name="" placeholder="input here" required></div>
 
-<div id="country" class="lively"><span>Country</span><input class="live" type="text" name="" placeholder="input here" required></div>
-	<div class="lively"><span>Detailed Address</span><input class="live" type="text" name="" placeholder="input here" required></div>
+<div id="country" class="lively"><span>Country</span><input class="live" id="bole" type="text" name="" placeholder="input here" required></div>
+	<div class="lively"><span>Detailed Billing Address</span><input class="live" id="blte" type="text" name="" placeholder="input here" required></div>
 
 	<div  class="lively"><span>Backup phone number</span><input class="live" id="bolte" type="number" name="" placeholder="input here" required></div>
 
